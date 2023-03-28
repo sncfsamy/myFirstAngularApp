@@ -1,1 +1,3 @@
-<h1>Bonjour !</h1>
+<h1 [ngStyle]="{color:isAdmin ? 'red':'inherit'}">{{title}}</h1>
+<button>View</button><button *ngIf="isAdmin">Edit</button><br />
+<button (click)="isAdmin=!isAdmin">{{ !isAdmin ? "Give" : "Take" }} me admin right !</button>
