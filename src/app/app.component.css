@@ -1,0 +1,14 @@
+section {
+    position:absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.top {
+    top: 0;
+    left: 0;
+}
+.bottom {
+    bottom: 0;
+    left: 0;
+}
