@@ -1,0 +1,11 @@
+<div class="profile">
+    <img [src]="user.photo" />
+    <div>
+        <h1>Nom : {{user.name}}</h1>
+        <h1>Prénom : {{user.firstName}}</h1>
+        <p>{{user.quote}}</p>
+        <p class="bordered">{{user.quote}}</p>
+        <button (click)="toggleAgeShowed()">{{ ageShowed ? "Hide" : "Show" }} my age</button>
+        <h3 *ngIf="ageShowed">My age: {{user.age}}yo</h3>
+    </div>
+</div>
