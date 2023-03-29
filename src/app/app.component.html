@@ -1,0 +1,7 @@
+<button (click)="showMovies=!showMovies">{{ showMovies ? "Hide" : "Show"}} movies</button>
+<ul *ngIf="showMovies">
+    <li appFirstMovie>Godfather</li>
+    <li>The Shawshank Redemption</li>
+    <li>Gone With the Wind</li>
+    <li>Casablanca</li>
+</ul>
