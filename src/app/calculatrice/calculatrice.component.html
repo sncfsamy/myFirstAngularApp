@@ -1,0 +1,13 @@
+<div>
+    <button (click)="number1 = generateRandomNumber()">{{number1}}</button>
+    <button (click)="number2 = generateRandomNumber()">{{number2}}</button>
+</div>
+<div>
+    <button (click)="total=number1+number2">+</button>
+    <button (click)="total=number1-number2">-</button>
+    <button (click)="total=number1*number2">X</button>
+<button (click)="total=number1/number2">÷</button>
+</div>
+<div>
+    <input type="text" readonly [value]="total" />
+</div>
