@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import User from './User';
+import { NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-user-profile',

@@ -4,7 +4,7 @@
         <h1>Nom : {{user.name}}</h1>
         <h1>Prénom : {{user.firstName}}</h1>
         <p>{{user.quote}}</p>
-        <input type="text" [(ngModel)]="user.quote" />
+        
         <br />
         <button (click)="toggleAgeShowed()">{{ ageShowed ? "Hide" : "Show" }} my age</button>
         <h3 *ngIf="ageShowed">My age: {{user.age}}yo</h3>
