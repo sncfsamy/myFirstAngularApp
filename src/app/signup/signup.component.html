@@ -1,0 +1,49 @@
+<form #signup="ngForm" (ngSubmit)="signup.valid && onSubmit()">
+    <fieldset>
+      <label for="firstname-signup">Prénom</label>
+      <input id="firstname-signup" name="firstname-signup" type="text" [(ngModel)]="model.firstname" #firstname="ngModel" required minlength="3" maxlength="15">
+      <div *ngIf="signup.submitted && firstname.errors">
+        <span *ngIf="firstname.errors?.['required']">Votre prénom est requis</span>
+        <span *ngIf="firstname.errors?.['minlength'] || firstname.errors?.['maxlength']">La longueur minimale doit être supérieure à 2 caractères et inférieure à 15</span>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <label for="lastname-signup">Nom</label>
+      <input id="lastname-signup" name="lastname-signup" type="text" [(ngModel)]="model.lastname" #lastname="ngModel" required minlength="3" maxlength="15">
+      <div *ngIf="signup.submitted && lastname.errors">
+        <span *ngIf="lastname.errors?.['required']">Votre nom est requis</span>
+        <span *ngIf="lastname.errors?.['minlength'] || lastname.errors?.['maxlength']">La longueur minimale doit être supérieure à 2 caractères et inférieure à 15</span>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <label for="password-signup">Mot de passe</label>
+      <input id="password-signup" name="password-signup" type="password" [(ngModel)]="model.password" #password="ngModel" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$" required minlength="6">
+      <div *ngIf="signup.submitted && password.errors">
+        <span *ngIf="password.errors?.['required']">Votre mot de passe est requis</span>
+        <span *ngIf="password.errors?.['minlength']">La longueur minimale doit être supérieure à 6 caractères</span>
+        <span *ngIf="password.errors?.['pattern']">Le mot de passe doit contenir des chiffres et des lettres</span>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <label for="checkpassword-signup">Mot de passe</label>
+      <input id="checkpassword-signup" name="checkpassword-signup" type="password" [(ngModel)]="model.checkpassword" #checkpassword="ngModel" required minlength="6">
+      <div *ngIf="signup.submitted && (checkpassword.errors || checkpassword.value !== password.value)">
+        <span *ngIf="checkpassword.errors?.['required']">Vous devez entrer à nouveau votre mot de passe</span>
+        <span *ngIf="checkpassword.value !== password.value">Les deux mots de passes ne sont pas indentique</span>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <label for="email-signup">Adresse mail</label>
+      <input id="email-signup" name="email-signup" [(ngModel)]="model.email" #email="ngModel" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required email>
+      <div *ngIf="signup.submitted && email.errors">
+        <span *ngIf="email.errors?.['required']">L'adresse mail est requise</span>
+        <span *ngIf="email.errors?.['email'] || email.errors?.['pattern']">Doit être une adresse email valide</span>
+      </div>
+    </fieldset>
+    <button type="reset">Restaurer</button>
+    <button type="submit">Sauvegarder</button>
+</form>
