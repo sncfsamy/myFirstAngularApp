@@ -1,0 +1,9 @@
+<form (ngSubmit)="onSubmit()">
+    <fieldset>
+        <label for="name">Nom:</label><input name="name" type="text" placeholder="Catounet" [(ngModel)]="kitten.name" />
+        <label for="breed">Race:</label><input name="breed" placeholder="Dev-o-beurre" type="text" [(ngModel)]="kitten.breed" />
+        <label for="birthdate">Date de naissance:</label><input name="birthdate" placeholder="01/01/2001" type="text" [(ngModel)]="kitten.birthdate" />
+        <label for="picture">Photo URL:</label><input name="picture" type="text" placeholder="http://" [(ngModel)]="kitten.picture" />
+        <input type="submit" value="create"/><input type="reset" value="Reset"/>
+    </fieldset>
+</form>

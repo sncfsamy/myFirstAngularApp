@@ -1,0 +1,4 @@
+.cat-lists {
+    display: flex;
+    justify-content: space-between;
+}

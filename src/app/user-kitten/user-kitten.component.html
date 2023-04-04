@@ -1,0 +1,15 @@
+<div>
+    <span *ngIf="kittenList.length === 0">Pas de chatons adopté !</span>
+    <div class="cat-list">
+        <ng-container *ngFor="let kitten of kittenList">
+            <section class="cat-card">
+                <img [src]="kitten.picture" [alt]="kitten.name" />
+                <div>
+                    <div><span>Nom: </span>{{kitten.name}}</div>
+                    <div><span>Race: </span>{{kitten.breed}}</div>
+                    <div><span>Date de naissance: </span>{{kitten.birthdate}}</div>
+                </div>
+            </section>
+        </ng-container>
+    </div>
+</div>
